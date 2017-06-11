@@ -27,13 +27,13 @@ public class SplitString {
     
     private static List<String> getList(String str){
         List<String> res = new ArrayList();
-        int count = (int) Math.ceil(str.length()/1536.0);
+        int count = (int) Math.ceil(str.length()/1024.0);
         
         int length = str.length()/count;
         for(int i=0; i < str.length();){
-            int index = str.indexOf(" ", (i + length)>=str.length()? str.length() : (i + length));
+            int index = str.indexOf("+", (i + length)>=str.length()? str.length() : (i + length));
             String el = str.substring(i, index == -1 ? str.length() : index);
-            res.add(el);
+            res.add(el.trim());
             i = (index==-1 ? str.length() : index);
         }
         return res;

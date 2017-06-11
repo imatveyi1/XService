@@ -22,8 +22,8 @@ public class ExponentialBackOff {
             return (count) * slotTime;
         }
         
-        Random r = new Random();
-        return (r.nextInt(1<<count)) * slotTime;
+//        Random r = new Random();
+        return ((1<<count)/2) * slotTime;
         
     }
     

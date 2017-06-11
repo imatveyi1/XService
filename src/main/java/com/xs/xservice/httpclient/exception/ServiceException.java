@@ -9,7 +9,7 @@ package com.xs.xservice.httpclient.exception;
  *
  * @author serega
  */
-public class ServiceException extends Exception {
+public class ServiceException extends RuntimeException {
     
     private final int status;
 
